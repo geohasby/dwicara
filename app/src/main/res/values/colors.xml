@@ -7,4 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    
+<!--    Dwicara Theme -->
+    <color name="blue_500">#FF00AAB9</color>
+    <color name="orange_500">#FFFFA600</color>
+    <color name="grey_900">#FF213152</color>
+    <color name="grey_500">#FF7E8DA6</color>
+    <color name="grey_300">#FFC6CAD5</color>
+    <color name="grey_200">#FFF2F3F7</color>
 </resources>
