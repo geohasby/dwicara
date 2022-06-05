@@ -1,4 +1,4 @@
-package com.bangkit.dwicara.auth.login
+package com.bangkit.dwicara.form
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
