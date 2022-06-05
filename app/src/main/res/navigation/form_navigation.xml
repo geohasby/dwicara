@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/form_navigation"
+    app:startDestination="@id/personalFragment">
+
+    <fragment
+        android:id="@+id/personalFragment"
+        android:name="com.bangkit.dwicara.form.PersonalFragment"
+        android:label="fragment_personal"
+        tools:layout="@layout/fragment_personal" >
+        <action
+            android:id="@+id/action_personalFragment_to_languageFragment"
+            app:destination="@id/languageFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/languageFragment"
+        android:name="com.bangkit.dwicara.form.LanguageFragment"
+        android:label="fragment_language"
+        tools:layout="@layout/fragment_language" >
+        <action
+            android:id="@+id/action_languageFragment_to_personalFragment"
+            app:destination="@id/personalFragment"
+            app:launchSingleTop="false"
+            app:popUpTo="@id/personalFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+</navigation>

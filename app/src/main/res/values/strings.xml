@@ -17,4 +17,9 @@
     <string name="password_doesnt_match">The confirmation password doesn\'t match.</string>
     <string name="reset_password">Reset Password</string>
     <string name="send_reset_link">Send Reset Link</string>
+    <string name="profile">Profile</string>
+    <string name="enter_your_name">What\'s your name?</string>
+    <string name="enter_your_birthday">Enter your birthday</string>
+    <string name="enter_your_gender">What\'s your gender?</string>
+    <string name="next">NEXT</string>
 </resources>
