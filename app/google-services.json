@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1084484289447",
+    "project_id": "dwicara-c5825",
+    "storage_bucket": "dwicara-c5825.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1084484289447:android:77d13187e99edc1128ac82",
+        "android_client_info": {
+          "package_name": "com.bangkit.dwicara"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1084484289447-g9nqljp8hmsc1anuv636hqanqjkb9nm7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bangkit.dwicara",
+            "certificate_hash": "6872d537d35559c04873edec2fa4c0bdc6f96d8c"
+          }
+        },
+        {
+          "client_id": "1084484289447-1ufnjq7rb1pv3qdnichmivcg6bg7pbv9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyhs6oSefzvYFxyKZaNdTlZzUej5hopII"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1084484289447-1ufnjq7rb1pv3qdnichmivcg6bg7pbv9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -16,12 +16,16 @@
         android:theme="@style/Theme.Dwicara"
         tools:targetApi="31">
         <activity
-            android:name=".auth.AuthActivity"
-            android:screenOrientation="fullSensor"
+            android:name=".form.FormActivity"
             android:exported="false" />
         <activity
+            android:name=".auth.AuthActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".SplashScreenActivity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

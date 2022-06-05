@@ -4,10 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Dev/Android/dwicara/app/src/main/res/layout/activity_auth.xml" value="0.22" />
+        <entry key="..\:/Dev/Android/dwicara/app/src/main/res/layout/activity_form.xml" value="0.1" />
         <entry key="..\:/Dev/Android/dwicara/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Dev/Android/dwicara/app/src/main/res/layout/activity_splash_screen.xml" value="0.14" />
-        <entry key="..\:/Dev/Android/dwicara/app/src/main/res/layout/fragment_login.xml" value="0.25" />
+        <entry key="..\:/Dev/Android/dwicara/app/src/main/res/layout/fragment_login.xml" value="0.22" />
         <entry key="..\:/Dev/Android/dwicara/app/src/main/res/layout/fragment_personal.xml" value="0.17074275362318841" />
+        <entry key="..\:/Dev/Android/dwicara/app/src/main/res/layout/fragment_register.xml" value="0.17074275362318841" />
+        <entry key="..\:/Dev/Android/dwicara/app/src/main/res/layout/fragment_reset.xml" value="0.22" />
         <entry key="..\:/Dev/Android/dwicara/app/src/main/res/layout/fragment_signup.xml" value="0.33" />
       </map>
     </option>

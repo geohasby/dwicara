@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".auth.signup.SignupFragment">
+    tools:context=".auth.reset.ResetFragment">
 
     <Button
         android:id="@+id/btn_back"
@@ -18,13 +18,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_register"
+        android:id="@+id/tv_reset"
         style="@style/TextContent.Header"
         android:layout_marginHorizontal="@dimen/space_normal"
-        android:text="@string/register_account"
+        android:text="@string/reset_password"
         app:layout_constraintBottom_toTopOf="@+id/et_email"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_bias="0.25"
+        app:layout_constraintVertical_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed" />
@@ -38,52 +38,21 @@
         android:backgroundTint="@color/grey_500"
         android:hint="@string/enter_your_email_hint"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/et_password"
+        app:layout_constraintBottom_toTopOf="@+id/btn_reset"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_register" />
-
-    <EditText
-        android:id="@+id/et_password"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/space_normal"
-        android:layout_marginTop="@dimen/space_normal"
-        android:backgroundTint="@color/grey_500"
-        android:hint="@string/enter_your_password_hint"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/et_confirm"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_email" />
-
-    <EditText
-        android:id="@+id/et_confirm"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/space_normal"
-        android:layout_marginTop="@dimen/space_normal"
-        android:backgroundTint="@color/grey_500"
-        android:hint="@string/confirm_your_password"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_password" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_reset" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_reset"
         style="@style/Button.Big"
         android:layout_marginHorizontal="@dimen/space_normal"
         android:layout_marginTop="@dimen/space_extra_large"
-        android:text="@string/register"
+        android:text="@string/send_reset_link"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_confirm" />
-
+        app:layout_constraintTop_toBottomOf="@+id/et_email" />
 </androidx.constraintlayout.widget.ConstraintLayout>
