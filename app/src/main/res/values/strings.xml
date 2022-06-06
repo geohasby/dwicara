@@ -18,8 +18,12 @@
     <string name="reset_password">Reset Password</string>
     <string name="send_reset_link">Send Reset Link</string>
     <string name="profile">Profile</string>
-    <string name="enter_your_name">What\'s your name?</string>
-    <string name="enter_your_birthday">When\'s your birthday?</string>
+    <string name="enter_your_full_name">What\'s your full name?</string>
+    <string name="enter_your_birthday">When\'s your birthday? (MMDDYYYY)</string>
     <string name="enter_your_gender">What\'s your gender?</string>
-    <string name="next">NEXT</string>
+    <string name="next">Next</string>
+    <string name="enter_your_username">Enter your username</string>
+    <string name="logout">Logout</string>
+    <string name="tell_us_your_interest">Tell Us Your Interest!</string>
+    <string name="save">save</string>
 </resources>

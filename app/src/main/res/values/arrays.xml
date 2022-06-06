@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="preloaded_fonts">preload_fonts</string-array>
+    <string-array name="com_google_android_gms_fonts_certs">fonts_cerst</string-array>
+    <string-array name="gender_list">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+</resources>
