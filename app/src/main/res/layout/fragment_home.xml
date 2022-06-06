@@ -1,14 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".home.HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <View
+        android:id="@+id/v_header"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="62dp"
+        android:background="@color/blue_500"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_search"
+        style="@style/OutlinedButton"
+        android:layout_marginHorizontal="@dimen/space_normal"
+        android:backgroundTint="@color/grey_200"
+        android:drawableEnd="@drawable/ic_baseline_search_24"
+        android:padding="@dimen/space_extra_small"
+        android:paddingStart="@dimen/space_normal"
+        android:paddingEnd="@dimen/space_normal"
+        android:text="@string/find_your_friend_by_id_here"
+        android:textAlignment="textStart"
+        android:textColor="@color/grey_500"
+        android:textStyle=""
+        android:textSize="12sp"
+        app:cornerRadius="@dimen/space_small"
+        app:drawableTint="@color/grey_500"
+        app:fontFamily="@font/poppins_regular"
+        app:layout_constraintBottom_toBottomOf="@id/v_header"
+        app:layout_constraintEnd_toEndOf="@id/v_header"
+        app:layout_constraintStart_toStartOf="@id/v_header"
+        app:layout_constraintTop_toTopOf="@id/v_header"
+        app:strokeColor="@color/grey_500"
+        app:textAllCaps="false" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
