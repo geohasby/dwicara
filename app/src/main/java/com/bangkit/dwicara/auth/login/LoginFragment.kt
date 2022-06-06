@@ -119,6 +119,7 @@ class LoginFragment : Fragment() {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d(TAG_EMAIL, "signInWithEmail:success")
                     val user = auth.currentUser
+                    Log.d(TAG_EMAIL, "${user?.email} ${user?.displayName} ${user?.uid} ${user?.phoneNumber}")
                     updateUI(user)
                 } else {
                     // If sign in fails, display a message to the user.
