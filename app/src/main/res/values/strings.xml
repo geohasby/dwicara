@@ -17,4 +17,12 @@
     <string name="password_doesnt_match">The confirmation password doesn\'t match.</string>
     <string name="reset_password">Reset Password</string>
     <string name="send_reset_link">Send Reset Link</string>
+    <string name="find_your_friend_by_id_here">Find your friend by ID here</string>
+    <string name="same_interest_with_you">Same Interest With You</string>
+    <string name="find_others_here">Find others here</string>
+    <string name="today_s_word">Today\'s Word</string>
+    <string name="new_insight">New Insight!</string>
+    <string name="click_to_read_more">Click to read more</string>
+    <string name="title_home">Home</string>
+    <string name="title_chats">Chats</string>
 </resources>
