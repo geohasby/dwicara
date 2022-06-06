@@ -51,26 +51,37 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/v_header" />
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_small"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/tv_interest"
+            tools:itemCount="1"
+            tools:listitem="@layout/item_list_home" />
+
         <Button
             android:id="@+id/btn_others"
             style="@style/OutlinedButton.Inline"
+            android:layout_marginTop="@dimen/space_extra_small"
             android:layout_marginEnd="@dimen/space_normal"
             android:drawableEnd="@drawable/ic_baseline_arrow_forward_24"
             android:paddingStart="@dimen/space_normal"
             android:paddingEnd="0dp"
             android:text="@string/find_others_here"
             android:textColor="@color/orange_500"
-            android:textSize="16sp"
+            android:textSize="14sp"
             app:drawableTint="@color/orange_500"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_interest" />
+            app:layout_constraintTop_toBottomOf="@id/rv_home" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cv_word"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/space_normal"
-            android:layout_marginTop="@dimen/space_normal"
+            android:layout_marginTop="@dimen/space_small"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?attr/selectableItemBackground"
