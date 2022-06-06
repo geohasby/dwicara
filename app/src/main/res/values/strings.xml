@@ -23,4 +23,6 @@
     <string name="today_s_word">Today\'s Word</string>
     <string name="new_insight">New Insight!</string>
     <string name="click_to_read_more">Click to read more</string>
+    <string name="title_home">Home</string>
+    <string name="title_chats">Chats</string>
 </resources>
