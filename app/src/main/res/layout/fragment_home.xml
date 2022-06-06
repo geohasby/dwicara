@@ -25,8 +25,8 @@
         android:text="@string/find_your_friend_by_id_here"
         android:textAlignment="textStart"
         android:textColor="@color/grey_500"
-        android:textStyle=""
         android:textSize="12sp"
+        android:textStyle=""
         app:cornerRadius="@dimen/space_small"
         app:drawableTint="@color/grey_500"
         app:fontFamily="@font/poppins_regular"
@@ -36,6 +36,27 @@
         app:layout_constraintTop_toTopOf="@id/v_header"
         app:strokeColor="@color/grey_500"
         app:textAllCaps="false" />
+
+    <TextView
+        android:id="@+id/tv_interest"
+        style="@style/TextContent.Highlight"
+        android:layout_marginStart="@dimen/space_normal"
+        android:layout_marginTop="@dimen/space_small"
+        android:text="@string/same_interest_with_you"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/v_header" />
+
+    <Button
+        style="@style/OutlinedButton.Inline"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/space_normal"
+        android:text="@string/find_others_here"
+        android:textColor="@color/orange_500"
+        android:textSize="12sp"
+        android:drawableEnd="@drawable/ic_baseline_arrow_forward_24"
+        app:layout_constraintTop_toBottomOf="@id/tv_interest"
+        app:drawableTint="@color/orange_500"/>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

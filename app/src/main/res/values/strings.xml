@@ -18,4 +18,6 @@
     <string name="reset_password">Reset Password</string>
     <string name="send_reset_link">Send Reset Link</string>
     <string name="find_your_friend_by_id_here">Find your friend by ID here</string>
+    <string name="same_interest_with_you">Same Interest With You</string>
+    <string name="find_others_here">Find others here</string>
 </resources>
