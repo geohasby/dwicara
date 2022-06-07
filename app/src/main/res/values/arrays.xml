@@ -7,4 +7,9 @@
         <item>Male</item>
         <item>Female</item>
     </string-array>
+    <string-array name="language_list">
+        <item>Select your language</item>
+        <item>Indonesia</item>
+        <item>English</item>
+    </string-array>
 </resources>

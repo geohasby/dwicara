@@ -65,24 +65,14 @@ class PersonalFragment : Fragment(), View.OnClickListener {
         }
 
         val genderList = resources.getStringArray(R.array.gender_list)
-//        val spinnerAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, genderList)
         val spinnerAdapter = object : ArrayAdapter<String>(requireContext(), android.R.layout.simple_spinner_item, genderList) {
 
-            override fun isEnabled(position: Int): Boolean {
-                return position != 0
-            }
+            override fun isEnabled(position: Int): Boolean = (position != 0)
 
-            override fun getDropDownView(
-                position: Int,
-                convertView: View?,
-                parent: ViewGroup
-            ): View {
+            override fun getDropDownView(position: Int, convertView: View?, parent: ViewGroup): View {
                 val view: TextView = super.getDropDownView(position, convertView, parent) as TextView
-                if(position == 0) {
-                    view.setTextColor(getColor(context, R.color.grey_500))
-                } else {
-                    view.setTextColor(getColor(context, R.color.grey_900))
-                }
+                if(position == 0) view.setTextColor(getColor(context, R.color.grey_500))
+                else view.setTextColor(getColor(context, R.color.grey_900))
                 return view
             }
         }
@@ -92,16 +82,10 @@ class PersonalFragment : Fragment(), View.OnClickListener {
 
         binding.etGender.onItemSelectedListener = object :
             AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long
-            ) {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 gender = parent!!.getItemAtPosition(position).toString()
-                if(gender == genderList[0]){
+                if(gender == genderList[0])
                     (view as TextView).setTextColor(getColor(requireContext(), R.color.grey_500))
-                }
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {}
