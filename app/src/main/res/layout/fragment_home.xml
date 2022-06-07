@@ -10,11 +10,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <View
+        <androidx.cardview.widget.CardView
             android:id="@+id/v_header"
             android:layout_width="match_parent"
             android:layout_height="62dp"
-            android:background="@color/blue_500"
+            app:cardElevation="@dimen/space_tiny"
+            android:backgroundTint="@color/blue_500"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
@@ -26,6 +27,7 @@
             android:padding="@dimen/space_extra_small"
             android:paddingStart="@dimen/space_normal"
             android:paddingEnd="@dimen/space_normal"
+            android:translationZ="@dimen/space_tiny"
             android:text="@string/find_your_friend_by_id_here"
             android:textAlignment="textStart"
             android:textColor="@color/grey_500"
