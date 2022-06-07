@@ -25,4 +25,7 @@
     <string name="click_to_read_more">Click to read more</string>
     <string name="title_home">Home</string>
     <string name="title_chats">Chats</string>
+    <string name="no_result_yet">No result yet</string>
+    <string name="view_profile">view profile</string>
+    <string name="chats">chats</string>
 </resources>
