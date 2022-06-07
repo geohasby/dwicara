@@ -12,6 +12,7 @@ import com.bangkit.dwicara.article.ArticleActivity
 import com.bangkit.dwicara.core.domain.User
 import com.bangkit.dwicara.databinding.FragmentHomeBinding
 import com.bangkit.dwicara.databinding.FragmentLoginBinding
+import com.bangkit.dwicara.search.SearchActivity
 import com.bumptech.glide.Glide
 
 class HomeFragment : Fragment() {
@@ -49,9 +50,13 @@ class HomeFragment : Fragment() {
             startActivity(Intent(activity, ArticleActivity::class.java))
         }
 
+        binding.btnSearch.setOnClickListener {
+            startActivity(Intent(activity, SearchActivity::class.java))
+        }
+
         Glide.with(this)
             .load("https://cdn.pixabay.com/photo/2018/05/08/13/56/globe-3383088__340.jpg")
-            .fitCenter()
+            .centerCrop()
             .into(binding.ivPreview)
     }
 }
