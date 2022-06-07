@@ -1,5 +1,6 @@
 package com.bangkit.dwicara.home
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,9 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bangkit.dwicara.R
+import com.bangkit.dwicara.article.ArticleActivity
 import com.bangkit.dwicara.core.domain.User
 import com.bangkit.dwicara.databinding.FragmentHomeBinding
 import com.bangkit.dwicara.databinding.FragmentLoginBinding
+import com.bumptech.glide.Glide
 
 class HomeFragment : Fragment() {
 
@@ -41,5 +44,14 @@ class HomeFragment : Fragment() {
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         val adapter = HomeItemAdapter(users)
         binding.rvHome.adapter = adapter
+
+        binding.cvArticle.setOnClickListener{
+            startActivity(Intent(activity, ArticleActivity::class.java))
+        }
+
+        Glide.with(this)
+            .load("https://cdn.pixabay.com/photo/2018/05/08/13/56/globe-3383088__340.jpg")
+            .fitCenter()
+            .into(binding.ivPreview)
     }
 }
