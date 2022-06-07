@@ -28,4 +28,6 @@
     <string name="no_result_yet">No result yet</string>
     <string name="view_profile">view profile</string>
     <string name="chats">chats</string>
+    <string name="txt_native">NATIVE</string>
+    <string name="txt_learn">LEARN</string>
 </resources>

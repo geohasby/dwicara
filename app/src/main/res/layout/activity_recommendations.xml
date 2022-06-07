@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".recommendations.RecommendationsActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_header"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:cardElevation="@dimen/space_tiny"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_back"
+        style="@style/OutlinedButton.Inline"
+        android:layout_marginStart="@dimen/space_normal"
+        android:layout_marginTop="@dimen/space_small"
+        android:drawableLeft="@drawable/ic_baseline_arrow_back_24"
+        android:text="@string/back"
+        android:translationZ="@dimen/space_tiny"
+        app:drawableTint="@color/blue_500"
+        app:layout_constraintStart_toStartOf="@id/cv_header"
+        app:layout_constraintTop_toTopOf="@id/cv_header" />
+
+    <ImageButton
+        android:id="@+id/btn_filter"
+        app:layout_constraintTop_toTopOf="@id/cv_header"
+        app:layout_constraintEnd_toEndOf="@id/cv_header"
+        app:layout_constraintBottom_toBottomOf="@id/cv_header"
+        android:layout_marginEnd="@dimen/space_normal"
+        android:backgroundTint="@color/white"
+        android:translationZ="@dimen/space_tiny"
+        app:tint="@color/blue_500"
+        android:src="@drawable/ic_baseline_tune_24"
+        android:layout_width="42dp"
+        android:layout_height="42dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_chips"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_small"
+        tools:listitem="@layout/chips_item"
+        tools:itemCount="1"
+        app:layout_constraintTop_toBottomOf="@id/cv_header"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_recommendations"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        tools:listitem="@layout/list_item"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:paddingBottom="@dimen/space_large"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toBottomOf="@id/rv_chips"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
