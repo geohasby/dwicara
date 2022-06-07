@@ -4,21 +4,21 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bangkit.dwicara.core.domain.User
-import com.bangkit.dwicara.databinding.ItemListHomeBinding
+import com.bangkit.dwicara.databinding.BubbleItemBinding
 import com.bumptech.glide.Glide
 
-class HomeItemAdapter(
+class BubbleItemAdapter(
     private val itemList: List<User>,
     private val clickCallback:(User) -> Unit ={ }
-): RecyclerView.Adapter<HomeItemAdapter.HomeItemViewHolder>() {
-    class HomeItemViewHolder(val binding: ItemListHomeBinding) : RecyclerView.ViewHolder(binding.root)
+): RecyclerView.Adapter<BubbleItemAdapter.BubbleItemViewHolder>() {
+    class BubbleItemViewHolder(val binding: BubbleItemBinding) : RecyclerView.ViewHolder(binding.root)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeItemViewHolder {
-        val binding = ItemListHomeBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return HomeItemViewHolder(binding)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BubbleItemViewHolder {
+        val binding = BubbleItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return BubbleItemViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: HomeItemViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: BubbleItemViewHolder, position: Int) {
         val (name, photo_url) = itemList[position]
         holder.binding.tvName.text = name
 

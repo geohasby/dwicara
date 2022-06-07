@@ -61,7 +61,7 @@
             android:orientation="horizontal"
             app:layout_constraintTop_toBottomOf="@id/tv_interest"
             tools:itemCount="1"
-            tools:listitem="@layout/item_list_home" />
+            tools:listitem="@layout/bubble_item" />
 
         <Button
             android:id="@+id/btn_others"
