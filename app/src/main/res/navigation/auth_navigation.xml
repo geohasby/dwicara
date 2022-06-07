@@ -21,20 +21,6 @@
             app:destination="@id/resetFragment" />
     </fragment>
     <fragment
-        android:id="@+id/personalFragment"
-        android:name="com.bangkit.dwicara.auth.login.PersonalFragment"
-        android:label="fragment_personal"
-        tools:layout="@layout/fragment_personal" >
-        <action
-            android:id="@+id/action_personalFragment_to_languageFragment"
-            app:destination="@id/languageFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/languageFragment"
-        android:name="com.bangkit.dwicara.auth.login.LanguageFragment"
-        android:label="fragment_language"
-        tools:layout="@layout/fragment_language" />
-    <fragment
         android:id="@+id/registerFragment"
         android:name="com.bangkit.dwicara.auth.register.RegisterFragment"
         android:label="fragment_register"

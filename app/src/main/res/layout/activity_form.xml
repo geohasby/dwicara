@@ -6,16 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".form.FormActivity">
 
-    <TextView
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Welcome to form profile"/>
-    <Button
-        android:id="@+id/btn_logout"
-        android:layout_width="match_parent"
-        android:layout_margin="@dimen/space_large"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_height="wrap_content"
-        android:text="logout"/>
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/form_navigation"
+        />
+
+<!--    <Button-->
+<!--        android:id="@+id/btn_logout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_margin="@dimen/space_large"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="logout"/>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
