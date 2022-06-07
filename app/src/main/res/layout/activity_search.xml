@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".search.SearchActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_header"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:cardElevation="@dimen/space_tiny"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_back"
+        style="@style/OutlinedButton.Inline"
+        android:layout_marginStart="@dimen/space_normal"
+        android:layout_marginTop="@dimen/space_small"
+        android:drawableLeft="@drawable/ic_baseline_arrow_back_24"
+        android:text="@string/back"
+        android:translationZ="@dimen/space_tiny"
+        app:drawableTint="@color/blue_500"
+        app:layout_constraintStart_toStartOf="@id/cv_header"
+        app:layout_constraintTop_toTopOf="@id/cv_header" />
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/sv_search"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginHorizontal="@dimen/space_normal"
+        android:layout_marginTop="@dimen/space_normal"
+        android:background="@color/grey_200"
+        android:translationZ="@dimen/space_tiny"
+        app:iconifiedByDefault="false"
+        app:layout_constraintEnd_toEndOf="@id/cv_header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cv_header"
+        app:queryHint="Enter you friend's username here" />
+
+    <ImageView
+        android:id="@+id/iv_empty_search"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/ic_baseline_person_search_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45"
+        app:tint="@color/grey_500" />
+
+    <TextView
+        android:id="@+id/tv_empty_search"
+        style="@style/TextContent"
+        android:layout_marginTop="@dimen/space_normal"
+        android:text="@string/no_result_yet"
+        android:textAlignment="center"
+        android:textColor="@color/grey_500"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_empty_search" />
+
+    <ImageView
+        android:id="@+id/iv_avatar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginHorizontal="@dimen/space_normal"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/tv_username"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sv_search"
+        app:layout_constraintVertical_bias="0.25"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:src="@tools:sample/avatars"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tv_username"
+        style="@style/TextContent"
+        android:layout_marginHorizontal="@dimen/space_normal"
+        android:layout_marginTop="@dimen/space_extra_small"
+        android:text="\@geohasboy"
+        android:textAlignment="center"
+        android:textColor="@color/orange_500"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/tv_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_avatar"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        style="@style/TextContent.Header"
+        android:layout_marginHorizontal="@dimen/space_normal"
+        android:layout_marginTop="@dimen/space_small"
+        android:text="Geohasby Ammar Kautsar"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:visibility="gone"
+        app:fontFamily="@font/poppins_bold"
+        app:layout_constraintBottom_toTopOf="@+id/tv_status"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_username"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tv_status"
+        style="@style/TextContent"
+        android:layout_marginHorizontal="@dimen/space_normal"
+        android:layout_marginTop="0dp"
+        android:text="Let\'s learn some english language together. Join me?"
+        android:textAlignment="center"
+        android:textColor="@color/grey_500"
+        android:textSize="12sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/btn_chat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/btn_chat"
+        style="@style/Button"
+        android:layout_marginHorizontal="@dimen/space_normal"
+        android:layout_marginTop="@dimen/space_large"
+        android:text="@string/chats"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/btn_view_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_status"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/btn_view_profile"
+        style="@style/OutlinedButton"
+        android:layout_marginHorizontal="@dimen/space_normal"
+        android:layout_marginTop="@dimen/space_small"
+        android:text="@string/view_profile"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_chat"
+        tools:visibility="visible" />
+</androidx.constraintlayout.widget.ConstraintLayout>
