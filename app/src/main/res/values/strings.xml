@@ -19,7 +19,7 @@
     <string name="send_reset_link">Send Reset Link</string>
     <string name="profile">Profile</string>
     <string name="enter_your_full_name">What\'s your full name?</string>
-    <string name="enter_your_birthday">When\'s your birthday? (MMDDYYYY)</string>
+    <string name="enter_your_birthday">When\'s your birthday?</string>
     <string name="enter_your_gender">What\'s your gender?</string>
     <string name="next">Next</string>
     <string name="enter_your_username">Enter your username</string>

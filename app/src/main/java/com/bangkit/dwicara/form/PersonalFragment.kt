@@ -1,12 +1,16 @@
 package com.bangkit.dwicara.form
 
 import android.app.DatePickerDialog
+import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.TextView
+import androidx.core.content.ContextCompat.getColor
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.bangkit.dwicara.R
@@ -61,12 +65,29 @@ class PersonalFragment : Fragment(), View.OnClickListener {
         }
 
         val genderList = resources.getStringArray(R.array.gender_list)
-        val spinnerAdapter = ArrayAdapter(
-            requireContext(),
-            android.R.layout.simple_spinner_dropdown_item,
-            genderList
-        )
+//        val spinnerAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, genderList)
+        val spinnerAdapter = object : ArrayAdapter<String>(requireContext(), android.R.layout.simple_spinner_item, genderList) {
 
+            override fun isEnabled(position: Int): Boolean {
+                return position != 0
+            }
+
+            override fun getDropDownView(
+                position: Int,
+                convertView: View?,
+                parent: ViewGroup
+            ): View {
+                val view: TextView = super.getDropDownView(position, convertView, parent) as TextView
+                if(position == 0) {
+                    view.setTextColor(getColor(context, R.color.grey_500))
+                } else {
+                    view.setTextColor(getColor(context, R.color.grey_900))
+                }
+                return view
+            }
+        }
+
+        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.etGender.adapter = spinnerAdapter
 
         binding.etGender.onItemSelectedListener = object :
@@ -77,10 +98,13 @@ class PersonalFragment : Fragment(), View.OnClickListener {
                 position: Int,
                 id: Long
             ) {
-                gender = genderList[position]
+                gender = parent!!.getItemAtPosition(position).toString()
+                if(gender == genderList[0]){
+                    (view as TextView).setTextColor(getColor(requireContext(), R.color.grey_500))
+                }
             }
 
-            override fun onNothingSelected(p0: AdapterView<*>?) {}
+            override fun onNothingSelected(parent: AdapterView<*>?) {}
             }
     }
 
@@ -90,7 +114,7 @@ class PersonalFragment : Fragment(), View.OnClickListener {
         binding.etBirthday.text = sdf.format(cal.time)
     }
 
-    fun validate(): Boolean {
+    private fun validate(): Boolean {
         username = binding.etUsername.text.toString()
         fullname = binding.etFullname.text.toString()
         birthday = binding.etBirthday.text.toString()
@@ -108,11 +132,17 @@ class PersonalFragment : Fragment(), View.OnClickListener {
             return false
         }
 
-//        if(birthday == R.string.enter_your_birthday.toString())
-
         if (birthday.isEmpty()) {
             binding.etBirthday.error = getString(R.string.field_empty_error, "birthday")
             binding.etBirthday.requestFocus()
+            return false
+        }
+
+        if(!(gender == "Male" || gender == "Female")) {
+            val errorText = binding.etGender.selectedView as TextView
+            errorText.error = getString(R.string.field_empty_error, "gender")
+//            binding.etGender.error = getString(R.string.field_empty_error, "birthday")
+            binding.etGender.requestFocus()
             return false
         }
 

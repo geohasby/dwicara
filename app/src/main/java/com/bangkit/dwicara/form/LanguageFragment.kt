@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.bangkit.dwicara.R
 import com.bangkit.dwicara.databinding.FragmentLanguageBinding
 
@@ -38,7 +39,8 @@ class LanguageFragment : Fragment(), View.OnClickListener {
 
     override fun onClick(v: View?) {
         when(v?.id){
-            R.id.btn_back -> {}
+            R.id.btn_back -> {
+                findNavController().navigate(R.id.action_languageFragment_to_personalFragment)}
             R.id.btn_save -> {}
         }
     }
