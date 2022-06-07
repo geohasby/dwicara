@@ -13,6 +13,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.Navigation
+import com.bangkit.dwicara.MainActivity
 import com.bangkit.dwicara.R
 import com.bangkit.dwicara.databinding.FragmentLoginBinding
 import com.bangkit.dwicara.form.FormActivity
@@ -137,7 +138,7 @@ class LoginFragment : Fragment() {
 
     private fun updateUI(currentUser: FirebaseUser?) {
         if (currentUser != null) {
-            startActivity(Intent(activity, FormActivity::class.java))
+            startActivity(Intent(activity, MainActivity::class.java))
         }
     }
 

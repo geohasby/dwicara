@@ -16,6 +16,15 @@
         android:theme="@style/Theme.Dwicara"
         tools:targetApi="31">
         <activity
+            android:name=".recommendations.RecommendationsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".search.SearchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".article.ArticleActivity"
+            android:exported="false" />
+        <activity
             android:name=".form.FormActivity"
             android:exported="false" />
         <activity
