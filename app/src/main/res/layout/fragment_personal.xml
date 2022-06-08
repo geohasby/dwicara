@@ -140,7 +140,7 @@
             android:id="@+id/btn_next"
             style="@style/Button.Big"
             android:layout_marginHorizontal="@dimen/space_normal"
-            android:layout_marginTop="@dimen/space_large"
+            android:layout_marginVertical="@dimen/space_large"
             android:text="@string/next"
             app:cornerRadius="@dimen/space_normal"
             app:layout_constraintTop_toBottomOf="@+id/et_gender"
