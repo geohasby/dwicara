@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:paddingVertical="@dimen/space_extra_small"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_name"
+        style="@style/TextContent.Highlight"
+        android:layout_marginStart="@dimen/space_normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/ib_remove"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/blue_500"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="@dimen/space_normal"
+        tools:text="Programming" />
+
+    <ImageButton
+        android:id="@+id/ib_remove"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:backgroundTint="@color/white"
+        android:layout_marginEnd="@dimen/space_normal"
+        android:src="@drawable/ic_baseline_remove_circle_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_name"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/red_500" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
