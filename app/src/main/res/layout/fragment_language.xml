@@ -27,24 +27,44 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <ImageView
+        android:id="@+id/iv_native"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_normal"
+        android:layout_marginTop="@dimen/space_normal"
+        android:src="@drawable/ic_unknown_flag"
+        app:layout_constraintTop_toBottomOf="@id/tv_interest"
+        app:layout_constraintStart_toStartOf="parent"/>
+
     <Spinner
         android:id="@+id/et_native"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/space_normal"
-        android:layout_marginTop="@dimen/space_normal"
-        app:layout_constraintTop_toBottomOf="@id/tv_interest"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/iv_native"
+        app:layout_constraintBottom_toBottomOf="@id/iv_native"
+        app:layout_constraintStart_toEndOf="@id/iv_native"
         app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:id="@+id/iv_learn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_normal"
+        android:layout_marginTop="@dimen/space_normal"
+        android:src="@drawable/ic_unknown_flag"
+        app:layout_constraintTop_toBottomOf="@id/iv_native"
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <Spinner
         android:id="@+id/et_learn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/space_normal"
-        android:layout_marginTop="@dimen/space_normal"
-        app:layout_constraintTop_toBottomOf="@id/et_native"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/iv_learn"
+        app:layout_constraintBottom_toBottomOf="@id/iv_learn"
+        app:layout_constraintStart_toEndOf="@id/iv_learn"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <Button
