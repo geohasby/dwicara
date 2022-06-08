@@ -9,9 +9,11 @@ import com.bangkit.dwicara.R
 import com.bangkit.dwicara.core.domain.Interest
 import com.bangkit.dwicara.core.domain.User
 import com.bangkit.dwicara.databinding.ActivityRecommendationsBinding
+import com.bangkit.dwicara.databinding.FilterBoxBinding
 
 class RecommendationsActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRecommendationsBinding
+    private lateinit var filterBinding: FilterBoxBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRecommendationsBinding.inflate(layoutInflater)
@@ -37,7 +39,8 @@ class RecommendationsActivity : AppCompatActivity() {
 
     private fun createFilterDialog() {
         val dialogBuilder = AlertDialog.Builder(this)
-        val filterPopUpView = LayoutInflater.from(this).inflate(R.layout.filter_box, null)
+        filterBinding = FilterBoxBinding.inflate(layoutInflater)
+        val filterPopUpView = filterBinding.root
 
         dialogBuilder.setView(filterPopUpView)
         dialogBuilder.create().show()

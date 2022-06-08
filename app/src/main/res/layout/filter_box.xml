@@ -1,19 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:paddingBottom="@dimen/space_large"
+    android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/tv_filter"
         style="@style/TextContent.Highlight"
-        android:text="Filter"
-        android:textColor="@color/blue_500"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_marginHorizontal="@dimen/space_normal"
         android:layout_marginTop="@dimen/space_normal"
-        android:textSize="20sp"/>
+        android:text="@string/filter"
+        android:textColor="@color/blue_500"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/et_native"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_normal"
+        android:layout_marginTop="@dimen/space_normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_filter" />
+
+    <Spinner
+        android:id="@+id/et_learn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_normal"
+        android:layout_marginTop="@dimen/space_normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_native" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/space_normal"
+        android:background="@drawable/edit_text_background"
+        app:layout_constraintBottom_toBottomOf="@id/rv_interest"
+        app:layout_constraintTop_toTopOf="@id/sv_filter" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_interest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/search_interest_item"
+        android:layout_marginHorizontal="@dimen/space_normal"
+        app:layout_constraintTop_toBottomOf="@id/sv_filter"
+        tools:itemCount="5" />
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/sv_filter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_normal"
+        android:layout_marginTop="@dimen/space_normal"
+        android:paddingVertical="@dimen/space_tiny"
+        app:iconifiedByDefault="false"
+        app:queryBackground="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/et_learn"
+        app:queryHint="Choose your interests"
+        app:searchIcon="@null" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
