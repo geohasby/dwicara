@@ -2,7 +2,10 @@ package com.bangkit.dwicara.recommendations
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bangkit.dwicara.R
 import com.bangkit.dwicara.core.domain.Interest
 import com.bangkit.dwicara.core.domain.User
 import com.bangkit.dwicara.databinding.ActivityRecommendationsBinding
@@ -26,6 +29,18 @@ class RecommendationsActivity : AppCompatActivity() {
         binding.btnBack.setOnClickListener {
             finish()
         }
+
+        binding.btnFilter.setOnClickListener{
+            createFilterDialog()
+        }
+    }
+
+    private fun createFilterDialog() {
+        val dialogBuilder = AlertDialog.Builder(this)
+        val filterPopUpView = LayoutInflater.from(this).inflate(R.layout.filter_box, null)
+
+        dialogBuilder.setView(filterPopUpView)
+        dialogBuilder.create().show()
     }
 
     companion object {
