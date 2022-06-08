@@ -1,14 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".myprofile.MyProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="My Profil" />
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <Button
+            android:id="@+id/btn_back"
+            style="@style/OutlinedButton.Inline"
+            android:layout_marginStart="@dimen/space_normal"
+            android:layout_marginTop="@dimen/space_small"
+            android:drawableLeft="@drawable/ic_baseline_arrow_back_24"
+            android:text="@string/back"
+            app:drawableTint="@color/blue_500"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btn_edit"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/ic_baseline_edit_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/avatar"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="@drawable/ic_account_circle_24px"
+            android:layout_marginTop="@dimen/space_extra_large"
+            app:layout_constraintTop_toTopOf="@id/btn_back"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_fullname"
+            style="@style/TextContent.Highlight"
+            android:text="Geohasby Ammar Kautsar"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/space_normal"
+            app:fontFamily="@font/poppins_bold"
+            app:layout_constraintTop_toBottomOf="@id/avatar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_status"
+            style="@style/TextContent"
+            android:text="Let’s learn some english language together. Join me?"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:textColor="@color/grey_500"
+            android:layout_marginHorizontal="@dimen/space_large"
+            android:layout_marginTop="@dimen/space_small"
+            app:layout_constraintTop_toBottomOf="@id/tv_fullname"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_languages"
+            style="@style/TextContent.Highlight"
+            android:text="@string/languages"
+            android:textColor="@color/blue_500"
+            android:layout_marginHorizontal="@dimen/space_large"
+            android:layout_marginTop="@dimen/space_large"
+            app:fontFamily="@font/poppins_semi_bold"
+            app:layout_constraintTop_toBottomOf="@id/tv_status"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_about"
+            style="@style/TextContent.Highlight"
+            android:text="@string/about"
+            android:textColor="@color/blue_500"
+            android:layout_marginHorizontal="@dimen/space_large"
+            android:layout_marginTop="@dimen/space_large"
+            app:fontFamily="@font/poppins_semi_bold"
+            app:layout_constraintTop_toBottomOf="@id/tv_languages"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_topic"
+            style="@style/TextContent.Highlight"
+            android:text="@string/topic_im_interested"
+            android:textColor="@color/blue_500"
+            android:layout_marginHorizontal="@dimen/space_large"
+            android:layout_marginTop="@dimen/space_large"
+            app:fontFamily="@font/poppins_semi_bold"
+            app:layout_constraintTop_toBottomOf="@id/tv_about"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
