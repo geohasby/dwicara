@@ -79,6 +79,7 @@
             android:text="@string/save"
             app:cornerRadius="@dimen/space_normal"
             app:layout_constraintTop_toBottomOf="@+id/et_learn"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
