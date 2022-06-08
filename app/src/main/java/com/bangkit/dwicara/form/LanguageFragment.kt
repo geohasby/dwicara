@@ -92,6 +92,25 @@ class LanguageFragment : Fragment(), View.OnClickListener {
         }
     }
 
+    private fun validate(): Boolean {
+
+        if(!(native == "English" || native == "Indonesia")) {
+            val errorText = binding.etNative.selectedView as TextView
+            errorText.error = getString(R.string.field_empty_error, "native language")
+            binding.etNative.requestFocus()
+            return false
+        }
+
+        if(!(learn == "English" || learn == "Indonesia")) {
+            val errorText = binding.etLearn.selectedView as TextView
+            errorText.error = getString(R.string.field_empty_error, "learn language")
+            binding.etLearn.requestFocus()
+            return false
+        }
+
+        return true
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
@@ -103,7 +122,9 @@ class LanguageFragment : Fragment(), View.OnClickListener {
                 findNavController().navigate(R.id.action_languageFragment_to_personalFragment)
             }
             R.id.btn_save -> {
-                startActivity(Intent(activity, MainActivity::class.java))
+                if(validate()){
+                    startActivity(Intent(activity, MainActivity::class.java))
+                }
             }
         }
     }

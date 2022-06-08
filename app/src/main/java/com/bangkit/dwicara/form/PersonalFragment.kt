@@ -125,7 +125,6 @@ class PersonalFragment : Fragment(), View.OnClickListener {
         if(!(gender == "Male" || gender == "Female")) {
             val errorText = binding.etGender.selectedView as TextView
             errorText.error = getString(R.string.field_empty_error, "gender")
-//            binding.etGender.error = getString(R.string.field_empty_error, "birthday")
             binding.etGender.requestFocus()
             return false
         }

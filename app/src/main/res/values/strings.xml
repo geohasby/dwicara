@@ -39,4 +39,7 @@
     <string name="chats">chats</string>
     <string name="txt_native">NATIVE</string>
     <string name="txt_learn">LEARN</string>
+    <string name="topic_im_interested">Topic I\'m Interested</string>
+    <string name="about">About</string>
+    <string name="languages">Languages</string>
 </resources>
