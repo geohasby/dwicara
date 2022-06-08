@@ -65,7 +65,7 @@ class PersonalFragment : Fragment(), View.OnClickListener {
         }
 
         val genderList = resources.getStringArray(R.array.gender_list)
-        val spinnerAdapter = object : ArrayAdapter<String>(requireContext(), android.R.layout.simple_spinner_item, genderList) {
+        val spinnerAdapter = object : ArrayAdapter<String>(requireContext(), R.layout.spinner_item, genderList) {
 
             override fun isEnabled(position: Int): Boolean = (position != 0)
 

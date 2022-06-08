@@ -32,7 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/space_normal"
-        android:layout_marginTop="@dimen/space_normal"
+        android:layout_marginTop="@dimen/space_large"
         android:src="@drawable/ic_unknown_flag"
         app:layout_constraintTop_toBottomOf="@id/tv_interest"
         app:layout_constraintStart_toStartOf="parent"/>
@@ -52,7 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/space_normal"
-        android:layout_marginTop="@dimen/space_normal"
+        android:layout_marginTop="@dimen/space_large"
         android:src="@drawable/ic_unknown_flag"
         app:layout_constraintTop_toBottomOf="@id/iv_native"
         app:layout_constraintStart_toStartOf="parent"/>
@@ -71,7 +71,7 @@
         android:id="@+id/btn_save"
         style="@style/Button.Big"
         android:layout_marginHorizontal="@dimen/space_normal"
-        android:layout_marginTop="@dimen/space_large"
+        android:layout_marginTop="@dimen/space_extra_large"
         android:text="@string/save"
         app:cornerRadius="@dimen/space_normal"
         app:layout_constraintTop_toBottomOf="@+id/et_learn"
