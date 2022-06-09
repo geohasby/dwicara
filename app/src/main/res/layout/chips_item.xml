@@ -3,23 +3,37 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
-    android:layout_marginStart="@dimen/space_small"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/space_small"
+    android:background="@drawable/edit_text_background"
+    android:backgroundTint="@color/blue_500">
 
-    <Button
-        android:id="@+id/chips"
-        style="@style/OutlinedButton"
+    <TextView
+        android:id="@+id/tv_name"
+        style="@style/TextContent"
         android:layout_width="wrap_content"
-        android:clickable="false"
-        android:focusable="false"
+        android:layout_height="wrap_content"
+        android:textColor="@color/blue_500"
         android:textSize="12sp"
-        app:cornerRadius="@dimen/space_normal"
-        app:fontFamily="@font/poppins_regular"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_remove"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:textAllCaps="false"
-        tools:text="Interest" />
+        tools:text="Programming" />
+
+    <ImageButton
+        android:id="@+id/btn_remove"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_baseline_remove_circle_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tv_name"
+        android:layout_marginStart="@dimen/space_small"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/red_500" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

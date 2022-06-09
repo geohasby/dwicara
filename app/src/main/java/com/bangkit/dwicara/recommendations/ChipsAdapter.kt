@@ -1,6 +1,7 @@
 package com.bangkit.dwicara.recommendations
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bangkit.dwicara.core.domain.Interest
@@ -8,7 +9,8 @@ import com.bangkit.dwicara.databinding.ChipsItemBinding
 
 class ChipsAdapter(
     private val listItems: List<Interest>,
-    private val clickCallback: (Interest) -> Unit = { }
+    private val isRemovable: Boolean = false,
+    private val removeButtonCallback: (Interest) -> Unit = { }
 ) : RecyclerView.Adapter<ChipsAdapter.ChipsViewHolder>() {
     class ChipsViewHolder(val binding: ChipsItemBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -18,12 +20,15 @@ class ChipsAdapter(
     }
 
     override fun onBindViewHolder(holder: ChipsViewHolder, position: Int) {
-        val (name) = listItems[position]
+        val interest = listItems[position]
+        val name = interest.name
 
-        holder.binding.chips.text = name
+        holder.binding.tvName.text = name
 
-        holder.itemView.setOnClickListener {
-            clickCallback(listItems[position])
+        holder.binding.btnRemove.visibility = if(isRemovable) View.VISIBLE else View.GONE
+
+        holder.binding.btnRemove.setOnClickListener {
+            removeButtonCallback(interest)
         }
     }
 
