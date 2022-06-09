@@ -43,29 +43,39 @@
         android:layout_height="0dp"
         android:layout_marginHorizontal="@dimen/space_normal"
         android:background="@drawable/edit_text_background"
-        app:layout_constraintBottom_toBottomOf="@id/rv_interest"
-        app:layout_constraintTop_toTopOf="@id/sv_filter" />
+        app:layout_constraintBottom_toBottomOf="@id/mtv_interests"
+        app:layout_constraintTop_toTopOf="@id/mtv_interests" />
+
+    <AutoCompleteTextView
+        android:id="@+id/mtv_interests"
+        app:layout_constraintTop_toBottomOf="@id/et_learn"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="@dimen/space_normal"
+        android:hint="Choose your interests"
+        android:layout_marginTop="@dimen/space_normal"
+        android:inputType="none"
+        android:backgroundTint="@color/white"
+        android:textSize="14sp"
+        android:layout_height="wrap_content"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_interest"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:listitem="@layout/search_interest_item"
-        android:layout_marginHorizontal="@dimen/space_normal"
-        app:layout_constraintTop_toBottomOf="@id/sv_filter"
-        tools:itemCount="5" />
+        android:layout_marginTop="@dimen/space_small"
+        tools:listitem="@layout/chips_item"
+        android:layout_marginStart="@dimen/space_normal"
+        tools:itemCount="1"
+        app:layout_constraintTop_toBottomOf="@id/mtv_interests"/>
 
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/sv_filter"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <Button
+        android:id="@+id/btn_apply"
+        style="@style/Button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rv_interest"
         android:layout_marginHorizontal="@dimen/space_normal"
         android:layout_marginTop="@dimen/space_normal"
-        android:paddingVertical="@dimen/space_tiny"
-        app:iconifiedByDefault="false"
-        app:queryBackground="@color/white"
-        app:layout_constraintTop_toBottomOf="@id/et_learn"
-        app:queryHint="Choose your interests"
-        app:searchIcon="@null" />
+        android:text="@string/apply"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
