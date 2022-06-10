@@ -11,6 +11,7 @@
         <entry key="..\:/Dev/Android/dwicara/app/src/main/res/layout/activity_recommendations.xml" value="0.25" />
         <entry key="..\:/Dev/Android/dwicara/app/src/main/res/layout/activity_search.xml" value="0.25" />
         <entry key="..\:/Dev/Android/dwicara/app/src/main/res/layout/activity_splash_screen.xml" value="0.14" />
+        <entry key="..\:/Dev/Android/dwicara/app/src/main/res/layout/bubble_item.xml" value="0.1" />
         <entry key="..\:/Dev/Android/dwicara/app/src/main/res/layout/chips_item.xml" value="0.67" />
         <entry key="..\:/Dev/Android/dwicara/app/src/main/res/layout/filter_box.xml" value="0.25" />
         <entry key="..\:/Dev/Android/dwicara/app/src/main/res/layout/fragment_home.xml" value="0.14947916666666666" />
@@ -22,7 +23,7 @@
         <entry key="..\:/Dev/Android/dwicara/app/src/main/res/layout/fragment_signup.xml" value="0.33" />
         <entry key="..\:/Dev/Android/dwicara/app/src/main/res/layout/item_list_home.xml" value="0.33" />
         <entry key="..\:/Dev/Android/dwicara/app/src/main/res/layout/item_list_recommendation.xml" value="0.25" />
-        <entry key="..\:/Dev/Android/dwicara/app/src/main/res/layout/list_item.xml" value="0.2" />
+        <entry key="..\:/Dev/Android/dwicara/app/src/main/res/layout/list_item.xml" value="1.25" />
         <entry key="..\:/Dev/Android/dwicara/app/src/main/res/layout/search_interest_item.xml" value="0.25" />
         <entry key="..\:/Dev/Android/dwicara/app/src/main/res/menu/bottom_nav_menu.xml" value="0.2581453634085213" />
         <entry key="..\:/practice/kotlin/dwicara/app/src/main/res/drawable/button_background.xml" value="0.1" />
