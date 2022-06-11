@@ -1,14 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".mychat.MyChatFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_header"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="My Chats" />
+        android:layout_height="56dp"
+        android:backgroundTint="@color/blue_500"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/tv_header"
+        style="@style/TextContent.Header"
+        android:layout_marginStart="@dimen/space_normal"
+        android:text="@string/my_chats"
+        android:textColor="@color/white"
+        android:translationZ="@dimen/space_tiny"
+        app:layout_constraintBottom_toBottomOf="@id/cv_header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/cv_header" />
+
+    <SearchView
+        android:id="@+id/sv_mychats"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:background="@color/white"
+        android:layout_marginStart="@dimen/space_large"
+        android:layout_marginEnd="@dimen/space_normal"
+        android:iconifiedByDefault="false"
+        android:translationZ="@dimen/space_tiny"
+        app:layout_constraintBottom_toBottomOf="@id/cv_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_header"
+        app:layout_constraintTop_toTopOf="@id/cv_header" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_mychats"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        tools:listitem="@layout/chat_user_list"
+        app:layout_constraintTop_toBottomOf="@id/cv_header"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -62,4 +62,9 @@ class HomeFragment : Fragment() {
             .centerCrop()
             .into(binding.ivPreview)
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }
