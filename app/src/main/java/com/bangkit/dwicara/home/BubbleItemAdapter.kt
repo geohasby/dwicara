@@ -19,7 +19,7 @@ class BubbleItemAdapter(
     }
 
     override fun onBindViewHolder(holder: BubbleItemViewHolder, position: Int) {
-        val (name, photo_url) = itemList[position]
+        val (_, name, photo_url) = itemList[position]
         holder.binding.tvName.text = name
 
         Glide.with(holder.itemView)
