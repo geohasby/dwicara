@@ -12,7 +12,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.Navigation
 import com.bangkit.dwicara.R
-import com.bangkit.dwicara.databinding.FragmentLoginBinding
 import com.bangkit.dwicara.databinding.FragmentResetBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
