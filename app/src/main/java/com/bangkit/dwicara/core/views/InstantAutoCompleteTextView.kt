@@ -6,9 +6,9 @@ import android.util.AttributeSet
 
 
 class InstantAutoCompleteTextView : androidx.appcompat.widget.AppCompatMultiAutoCompleteTextView {
-    constructor(context: Context) : super(context) {}
-    constructor(arg0: Context, arg1: AttributeSet?) : super(arg0, arg1) {}
-    constructor(arg0: Context, arg1: AttributeSet?, arg2: Int) : super(arg0, arg1, arg2) {}
+    constructor(context: Context) : super(context)
+    constructor(arg0: Context, arg1: AttributeSet?) : super(arg0, arg1)
+    constructor(arg0: Context, arg1: AttributeSet?, arg2: Int) : super(arg0, arg1, arg2)
 
     override fun enoughToFilter(): Boolean {
         return false
