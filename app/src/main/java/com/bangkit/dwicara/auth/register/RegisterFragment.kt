@@ -14,9 +14,13 @@ import android.widget.Toast
 import androidx.navigation.Navigation
 import com.bangkit.dwicara.R
 import com.bangkit.dwicara.databinding.FragmentRegisterBinding
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.android.gms.tasks.Task
+import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
 
 class RegisterFragment : Fragment() {
@@ -47,7 +51,7 @@ class RegisterFragment : Fragment() {
             signUp()
         }
 
-        binding.etEmail.addTextChangedListener(object: TextWatcher{
+        binding.etEmail.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 // do nothing
             }
@@ -57,7 +61,9 @@ class RegisterFragment : Fragment() {
             }
 
             override fun afterTextChanged(txt: Editable?) {
-                if(txt.toString().isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(txt.toString()).matches()) {
+                if (txt.toString().isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(txt.toString())
+                        .matches()
+                ) {
                     binding.etEmail.setError(context?.getString(R.string.invalid_email_error), null)
                 } else {
                     binding.etEmail.error = null
@@ -75,15 +81,18 @@ class RegisterFragment : Fragment() {
             }
 
             override fun afterTextChanged(txt: Editable?) {
-                if(txt.toString().length < PWD_MIN_LENGTH) {
-                    binding.etPassword.setError(context?.getString(R.string.invalid_password_format), null)
+                if (txt.toString().length < PWD_MIN_LENGTH) {
+                    binding.etPassword.setError(
+                        context?.getString(R.string.invalid_password_format),
+                        null
+                    )
                 } else {
                     binding.etPassword.error = null
                 }
             }
         })
 
-        binding.etConfirm.addTextChangedListener(object: TextWatcher {
+        binding.etConfirm.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 // do nothing
             }
@@ -95,7 +104,7 @@ class RegisterFragment : Fragment() {
             override fun afterTextChanged(txt: Editable?) {
                 val pwd = binding.etPassword.text.toString().trim()
                 val pwdConfirm = binding.etConfirm.text.toString().trim()
-                if(pwd != pwdConfirm) {
+                if (pwd != pwdConfirm) {
                     binding.etConfirm.error = context?.getString(R.string.password_doesnt_match)
                 } else {
                     binding.etConfirm.error = null
@@ -148,7 +157,7 @@ class RegisterFragment : Fragment() {
     }
 
     private fun signUp() {
-        if(isValidForm()) {
+        if (isValidForm()) {
             val email = binding.etEmail.text.toString().trim()
             val password = binding.etPassword.text.toString().trim()
             firebaseCreateUserWithEmailPassword(email, password)
@@ -162,20 +171,43 @@ class RegisterFragment : Fragment() {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d(TAG_REGISTER, "createUserWithEmail:success")
                     val user = auth.currentUser
-                    updateUI(user)
+                    addNewUserToDatabase(user)
                 } else {
                     // If sign in fails, display a message to the user.
                     Log.w(TAG_REGISTER, "createUserWithEmail:failure", task.exception)
-                    Toast.makeText(context, "register failed : ${task.exception?.localizedMessage}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        context,
+                        "register failed : ${task.exception?.localizedMessage}",
+                        Toast.LENGTH_SHORT
+                    ).show()
                     updateUI(null)
                 }
             }
     }
 
+    private fun addNewUserToDatabase(user: FirebaseUser?) {
+        val reference = FirebaseDatabase.getInstance().getReference("users").child(user?.uid as String)
+
+        val newData = HashMap<String, String>()
+        newData["id"] = user.uid
+        newData["name"] = user.displayName as String
+        newData["email"] = user.email as String
+        newData["photo_url"] = user.photoUrl.toString()
+
+        reference.setValue(newData).addOnCompleteListener(activity as Activity) { task ->
+            if(task.isSuccessful) {
+                updateUI(user)
+            } else {
+                addNewUserToDatabase(user)
+            }
+        }
+    }
+
     private fun updateUI(currentUser: FirebaseUser?) {
-        if(currentUser != null) {
+        if (currentUser != null) {
             Log.d(TAG_REGISTER, "update UI works")
-            Navigation.findNavController(binding.btnRegister).navigate(R.id.action_registerFragment_to_loginFragment)
+            Navigation.findNavController(binding.btnRegister)
+                .navigate(R.id.action_registerFragment_to_loginFragment)
         }
     }
 

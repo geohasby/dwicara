@@ -20,7 +20,7 @@ class ListItemAdapter(
     }
 
     override fun onBindViewHolder(holder: ListItemViewHolder, position: Int) {
-        val (name, photo_url, status, native, learn) = listItem[position]
+        val (_, name, photo_url, status, native, learn) = listItem[position]
 
         holder.binding.apply {
             tvName.text = name

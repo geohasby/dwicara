@@ -222,48 +222,12 @@ class RecommendationsActivity : AppCompatActivity() {
             Interest("Games"),
         )
         private val users = listOf(
-            User(
-                "Muhammad Faqih Wijaya",
-                "https://cdn.pixabay.com/photo/2017/04/01/21/06/portrait-2194457__340.jpg",
-                null,
-                null,
-                null
-            ),
-            User(
-                "Geohasby Ammar K",
-                "https://cdn.pixabay.com/photo/2016/11/21/14/53/man-1845814__340.jpg",
-                null,
-                null,
-                null
-            ),
-            User(
-                "Gilang Cey",
-                "https://cdn.pixabay.com/photo/2017/11/02/14/27/model-2911332__340.jpg",
-                null,
-                null,
-                null
-            ),
-            User(
-                "Nisrina Firdha Nabila",
-                "https://cdn.pixabay.com/photo/2015/03/03/18/58/woman-657753__340.jpg",
-                null,
-                null,
-                null
-            ),
-            User(
-                "Erwin B P",
-                "https://cdn.pixabay.com/photo/2016/11/21/14/53/man-1845814__340.jpg",
-                null,
-                null,
-                null
-            ),
-            User(
-                "Akhyar Rasyidy",
-                "https://cdn.pixabay.com/photo/2015/07/20/12/57/ambassador-852766_960_720.jpg",
-                null,
-                null,
-                null
-            )
+            User(null, "Muhammad Faqih Wijaya", "https://cdn.pixabay.com/photo/2017/04/01/21/06/portrait-2194457__340.jpg",null,null,null),
+            User(null, "Geohasby Ammar K", "https://cdn.pixabay.com/photo/2016/11/21/14/53/man-1845814__340.jpg",null,null,null),
+            User(null, "Gilang Cey", "https://cdn.pixabay.com/photo/2017/11/02/14/27/model-2911332__340.jpg",null,null,null),
+            User(null, "Nisrina Firdha Nabila","https://cdn.pixabay.com/photo/2015/03/03/18/58/woman-657753__340.jpg",null,null,null),
+            User(null, "Erwin B P", "https://cdn.pixabay.com/photo/2016/11/21/14/53/man-1845814__340.jpg",null,null,null),
+            User(null, "Akhyar Rasyidy","https://cdn.pixabay.com/photo/2015/07/20/12/57/ambassador-852766_960_720.jpg",null,null,null)
         )
     }
 }
