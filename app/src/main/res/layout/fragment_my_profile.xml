@@ -44,7 +44,7 @@
         <TextView
             android:id="@+id/tv_username"
             style="@style/TextContent"
-            android:text="@geohasboy"
+            android:text="/@geohasboy"
             android:gravity="center"
             android:layout_marginTop="@dimen/space_normal"
             android:textSize="12sp"

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".chat.ChatActivity">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_header"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        app:cardElevation="@dimen/space_tiny"
+        android:backgroundTint="@color/white"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_back"
+        style="@style/OutlinedButton.Inline"
+        android:layout_width="36dp"
+        android:paddingStart="@dimen/space_small"
+        android:paddingEnd="0dp"
+        android:layout_marginStart="@dimen/space_normal"
+        android:drawableLeft="@drawable/ic_baseline_arrow_back_24"
+        android:translationZ="@dimen/space_tiny"
+        app:drawableTint="@color/blue_500"
+        app:layout_constraintBottom_toBottomOf="@id/cv_header"
+        app:layout_constraintStart_toStartOf="@id/cv_header"
+        app:layout_constraintTop_toTopOf="@id/cv_header" />
+
+    <ImageView
+        android:id="@+id/iv_avatar"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_margin="@dimen/space_normal"
+        android:translationZ="@dimen/space_tiny"
+        app:layout_constraintBottom_toBottomOf="@id/cv_header"
+        app:layout_constraintStart_toEndOf="@id/btn_back"
+        app:layout_constraintTop_toTopOf="@id/cv_header"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        style="@style/TextContent.Highlight"
+        tools:text="Muhammad Faqih Wijaya"
+        android:translationZ="@dimen/space_tiny"
+        android:textColor="@color/blue_500"
+        app:layout_constraintTop_toTopOf="@id/cv_header"
+        app:layout_constraintBottom_toBottomOf="@id/cv_header"
+        app:layout_constraintStart_toEndOf="@id/iv_avatar"
+        app:layout_constraintEnd_toStartOf="@id/btn_more"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:layout_marginStart="@dimen/space_normal"/>
+
+    <ImageButton
+        android:id="@+id/btn_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:translationZ="@dimen/space_tiny"
+        app:layout_constraintTop_toTopOf="@id/cv_header"
+        app:layout_constraintEnd_toEndOf="@id/cv_header"
+        android:src="@drawable/ic_baseline_more_vert_24"
+        android:backgroundTint="@color/white"
+        app:tint="@color/blue_500"
+        app:layout_constraintBottom_toBottomOf="@id/cv_header"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
