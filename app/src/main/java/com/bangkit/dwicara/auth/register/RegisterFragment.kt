@@ -13,6 +13,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.Navigation
 import com.bangkit.dwicara.R
+import com.bangkit.dwicara.core.domain.User
 import com.bangkit.dwicara.databinding.FragmentRegisterBinding
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.Task
@@ -21,7 +22,10 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
+import java.util.*
+import kotlin.collections.HashMap
 
 class RegisterFragment : Fragment() {
 
@@ -171,6 +175,7 @@ class RegisterFragment : Fragment() {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d(TAG_REGISTER, "createUserWithEmail:success")
                     val user = auth.currentUser
+                    Log.d("USER", "${user?.displayName} ${user?.email} ${user?.uid}")
                     addNewUserToDatabase(user)
                 } else {
                     // If sign in fails, display a message to the user.
@@ -186,19 +191,27 @@ class RegisterFragment : Fragment() {
     }
 
     private fun addNewUserToDatabase(user: FirebaseUser?) {
-        val reference = FirebaseDatabase.getInstance().getReference("users").child(user?.uid as String)
+        val id = user?.uid ?: ""
+        val name = user?.displayName ?: ""
+        val email = user?.email ?: ""
+        val photo_url = user?.photoUrl.toString()
+        val reference = FirebaseFirestore.getInstance().collection("users")
+        val newData = HashMap<String, Any>()
+        newData.put("id", id)
+        newData.put("name", name)
+        newData.put("email", email)
+        newData.put("photo_url", photo_url)
 
-        val newData = HashMap<String, String>()
-        newData["id"] = user.uid
-        newData["name"] = user.displayName as String
-        newData["email"] = user.email as String
-        newData["photo_url"] = user.photoUrl.toString()
-
-        reference.setValue(newData).addOnCompleteListener(activity as Activity) { task ->
+        reference.add(newData).addOnCompleteListener(activity as Activity) { task ->
             if(task.isSuccessful) {
                 updateUI(user)
             } else {
-                addNewUserToDatabase(user)
+                Log.w(TAG_REGISTER, "createUserInDatabase:failure", task.exception)
+                Toast.makeText(
+                    context,
+                    "register failed : ${task.exception?.localizedMessage}",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
     }
