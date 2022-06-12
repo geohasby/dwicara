@@ -13,19 +13,11 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.Navigation
 import com.bangkit.dwicara.R
-import com.bangkit.dwicara.core.domain.User
 import com.bangkit.dwicara.databinding.FragmentRegisterBinding
-import com.google.android.gms.tasks.OnCompleteListener
-import com.google.android.gms.tasks.Task
-import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
-import java.util.*
-import kotlin.collections.HashMap
 
 class RegisterFragment : Fragment() {
 
@@ -45,45 +37,39 @@ class RegisterFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        auth = Firebase.auth
+        setUpView()
+    }
+
+    private fun setUpView() {
         binding.btnBack.setOnClickListener {
             Navigation.findNavController(it).navigate(R.id.action_registerFragment_to_loginFragment)
         }
-
-        auth = Firebase.auth
-
         binding.btnRegister.setOnClickListener {
-            signUp()
+            register()
         }
-
         binding.etEmail.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 // do nothing
             }
-
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 // do nothing
             }
-
             override fun afterTextChanged(txt: Editable?) {
-                if (txt.toString().isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(txt.toString())
-                        .matches()
-                ) {
+                if (txt.toString().isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(txt.toString()).matches()) {
                     binding.etEmail.setError(context?.getString(R.string.invalid_email_error), null)
                 } else {
                     binding.etEmail.error = null
                 }
             }
         })
-
         binding.etPassword.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 // do nothing
             }
-
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 // do nothing)
             }
-
             override fun afterTextChanged(txt: Editable?) {
                 if (txt.toString().length < PWD_MIN_LENGTH) {
                     binding.etPassword.setError(
@@ -95,16 +81,13 @@ class RegisterFragment : Fragment() {
                 }
             }
         })
-
         binding.etConfirm.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 // do nothing
             }
-
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 // do nothing
             }
-
             override fun afterTextChanged(txt: Editable?) {
                 val pwd = binding.etPassword.text.toString().trim()
                 val pwdConfirm = binding.etConfirm.text.toString().trim()
@@ -114,7 +97,6 @@ class RegisterFragment : Fragment() {
                     binding.etConfirm.error = null
                 }
             }
-
         })
     }
 
@@ -160,7 +142,7 @@ class RegisterFragment : Fragment() {
         return isValid
     }
 
-    private fun signUp() {
+    private fun register() {
         if (isValidForm()) {
             val email = binding.etEmail.text.toString().trim()
             val password = binding.etPassword.text.toString().trim()
@@ -175,8 +157,7 @@ class RegisterFragment : Fragment() {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d(TAG_REGISTER, "createUserWithEmail:success")
                     val user = auth.currentUser
-                    Log.d("USER", "${user?.displayName} ${user?.email} ${user?.uid}")
-                    addNewUserToDatabase(user)
+                    updateUI(user)
                 } else {
                     // If sign in fails, display a message to the user.
                     Log.w(TAG_REGISTER, "createUserWithEmail:failure", task.exception)
@@ -190,37 +171,9 @@ class RegisterFragment : Fragment() {
             }
     }
 
-    private fun addNewUserToDatabase(user: FirebaseUser?) {
-        val id = user?.uid ?: ""
-        val name = user?.displayName ?: ""
-        val email = user?.email ?: ""
-        val photo_url = user?.photoUrl.toString()
-        val reference = FirebaseFirestore.getInstance().collection("users")
-        val newData = HashMap<String, Any>()
-        newData.put("id", id)
-        newData.put("name", name)
-        newData.put("email", email)
-        newData.put("photo_url", photo_url)
-
-        reference.add(newData).addOnCompleteListener(activity as Activity) { task ->
-            if(task.isSuccessful) {
-                updateUI(user)
-            } else {
-                Log.w(TAG_REGISTER, "createUserInDatabase:failure", task.exception)
-                Toast.makeText(
-                    context,
-                    "register failed : ${task.exception?.localizedMessage}",
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
-        }
-    }
-
     private fun updateUI(currentUser: FirebaseUser?) {
         if (currentUser != null) {
-            Log.d(TAG_REGISTER, "update UI works")
-            Navigation.findNavController(binding.btnRegister)
-                .navigate(R.id.action_registerFragment_to_loginFragment)
+            Navigation.findNavController(binding.btnRegister).navigate(R.id.action_registerFragment_to_loginFragment)
         }
     }
 
