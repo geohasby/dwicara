@@ -12,7 +12,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.Navigation
 import com.bangkit.dwicara.R
-import com.bangkit.dwicara.databinding.FragmentLoginBinding
 import com.bangkit.dwicara.databinding.FragmentResetBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -36,18 +35,18 @@ class ResetFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         auth = Firebase.auth
+        setUpView()
+    }
 
+    private fun setUpView() {
         binding.etEmail.addTextChangedListener(object: TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 // do nothing
             }
-
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 // do nothing
             }
-
             override fun afterTextChanged(txt: Editable?) {
                 if(txt.toString().isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(txt.toString()).matches()) {
                     binding.etEmail.setError(context?.getString(R.string.invalid_email_error), null)

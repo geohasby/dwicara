@@ -40,9 +40,11 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         auth = Firebase.auth
+        setUpView()
+    }
 
+    private fun setUpView() {
         binding.btnToRegister.setOnClickListener {
             Navigation.findNavController(it).navigate(R.id.action_loginFragment_to_registerFragment)
         }
@@ -53,13 +55,11 @@ class LoginFragment : Fragment() {
 
         binding.etEmail.addTextChangedListener(object: TextWatcher{
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                // do nothing
+                //do nothing
             }
-
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                // do nothing
+                //do nothing
             }
-
             override fun afterTextChanged(txt: Editable?) {
                 if(txt.toString().isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(txt.toString()).matches()) {
                     binding.etEmail.setError(context?.getString(R.string.invalid_email_error), null)
@@ -81,7 +81,7 @@ class LoginFragment : Fragment() {
 
         when {
             email.isEmpty() -> {
-                binding.etEmail.error = "Please fill out the email field!"
+                binding.etEmail.error = getString(R.string.field_empty_error, "email")
                 binding.etEmail.requestFocus()
                 isValid = false
             }
@@ -91,12 +91,11 @@ class LoginFragment : Fragment() {
                 isValid = false
             }
             password.isEmpty() -> {
-                binding.etPassword.error = "Please fill out the password field!"
+                binding.etPassword.error = getString(R.string.field_empty_error, "password")
                 binding.etPassword.requestFocus()
                 isValid = false
             }
             // check for other errors like wrong password format
-            //password at least 6  character long
             binding.etPassword.error != null -> {
                 binding.etPassword.requestFocus()
                 isValid = false
@@ -126,19 +125,31 @@ class LoginFragment : Fragment() {
                     Log.d(TAG_EMAIL, "signInWithEmail:success")
                     val user = auth.currentUser
                     clearForm()
-                    updateUI(user)
+                    checkUserInDatabase(user)
                 } else {
                     // If sign in fails, display a message to the user.
                     Log.w(TAG_EMAIL, "signInWithEmail:failure", task.exception)
                     Toast.makeText(context, "login failed : ${task.exception?.localizedMessage}", Toast.LENGTH_SHORT).show()
-                    updateUI(null)
+                    checkUserInDatabase(null)
                 }
             }
     }
 
-    private fun updateUI(currentUser: FirebaseUser?) {
+    private fun updateUI(currentUser: FirebaseUser?, destination: Class<*> = MainActivity::class.java) {
         if (currentUser != null) {
-            startActivity(Intent(activity, MainActivity::class.java))
+            startActivity(Intent(activity, destination))
+        }
+    }
+
+    private fun checkUserInDatabase(user: FirebaseUser?) {
+        // call api to check user availability
+        if(user != null) {
+            val isRegistered = true
+            if(isRegistered) {
+                updateUI(user)
+            } else {
+                updateUI(user, FormActivity::class.java)
+            }
         }
     }
 
