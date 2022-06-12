@@ -17,9 +17,10 @@ We develop Dwicara mobile app with :
 ### Prerequisites
 - Java Development Kit (JDK)
 - Android Studio
-### Clone This Project
+#### Clone This Project
 You can clone this repository with https with this way :
-git clone https://github.com/geohasby/dwicara.git
+
+    git clone https://github.com/geohasby/dwicara.git
 ### Open Project
 Open project with Android Studio IDE and let Android Studio download all dependencies
 ### Run Application
