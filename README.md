@@ -13,7 +13,7 @@ This product has been made by group C22-PS260 for the Bangkit Capstone Project
 We develop Dwicara mobile app with :
 1. Kotlin
 2. Android Studio
-## Duplicate This Project
+## Steps to Replicate
 ### Prerequisites
 - Java Development Kit (JDK)
 - Android Studio
