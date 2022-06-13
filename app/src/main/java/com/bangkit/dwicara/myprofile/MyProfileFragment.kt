@@ -1,5 +1,6 @@
 package com.bangkit.dwicara.myprofile
 
+import android.app.Activity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -34,10 +35,18 @@ class MyProfileFragment : Fragment() {
 
         auth = Firebase.auth
 
+        setUpView()
+    }
+
+    private fun setUpView() {
         binding.btnBack.setOnClickListener {
             activity?.finish()
         }
 
+        Glide.with(activity as Activity)
+            .load("https://cdn.pixabay.com/photo/2017/11/02/14/27/model-2911332__340.jpg")
+            .circleCrop()
+            .into(binding.avatar)
 
         binding.btnLogout.setOnClickListener {
             auth.signOut()
