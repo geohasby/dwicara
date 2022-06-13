@@ -66,4 +66,38 @@
         app:tint="@color/blue_500"
         app:layout_constraintBottom_toBottomOf="@id/cv_header"/>
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/space_tiny"
+        app:layout_constraintTop_toTopOf="@id/et_messages"
+        app:layout_constraintStart_toStartOf="@id/et_messages"
+        app:layout_constraintEnd_toEndOf="@id/et_messages"
+        app:layout_constraintBottom_toBottomOf="@id/et_messages" />
+
+    <EditText
+        android:id="@+id/et_messages"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        style="@style/EditText"
+        android:hint="Type your messages ..."
+        android:translationZ="@dimen/space_tiny"
+        android:layout_marginHorizontal="@dimen/space_normal"
+        android:layout_marginBottom="@dimen/space_normal"
+        android:background="@drawable/edit_text_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_send"
+        android:background="@color/white"
+        android:layout_marginEnd="@dimen/space_small"
+        app:layout_constraintTop_toTopOf="@id/et_messages"
+        app:layout_constraintBottom_toBottomOf="@id/et_messages"
+        app:layout_constraintEnd_toEndOf="@id/et_messages"/>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

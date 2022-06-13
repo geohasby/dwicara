@@ -18,7 +18,7 @@
         <entry key="..\:/Dev/Android/dwicara/app/src/main/res/layout/chips_item.xml" value="0.67" />
         <entry key="..\:/Dev/Android/dwicara/app/src/main/res/layout/filter_box.xml" value="0.25" />
         <entry key="..\:/Dev/Android/dwicara/app/src/main/res/layout/fragment_home.xml" value="0.14947916666666666" />
-        <entry key="..\:/Dev/Android/dwicara/app/src/main/res/layout/fragment_language.xml" value="0.25" />
+        <entry key="..\:/Dev/Android/dwicara/app/src/main/res/layout/fragment_language.xml" value="0.14947916666666666" />
         <entry key="..\:/Dev/Android/dwicara/app/src/main/res/layout/fragment_login.xml" value="0.22" />
         <entry key="..\:/Dev/Android/dwicara/app/src/main/res/layout/fragment_my_chat.xml" value="0.2020316027088036" />
         <entry key="..\:/Dev/Android/dwicara/app/src/main/res/layout/fragment_my_profile.xml" value="0.2923076923076923" />
@@ -45,10 +45,12 @@
         <entry key="..\:/practice/kotlin/dwicara/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.1185" />
         <entry key="..\:/practice/kotlin/dwicara/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.164" />
         <entry key="..\:/practice/kotlin/dwicara/app/src/main/res/drawable/ic_edit_24px.xml" value="0.1185" />
+        <entry key="..\:/practice/kotlin/dwicara/app/src/main/res/drawable/ic_send.xml" value="0.202" />
         <entry key="..\:/practice/kotlin/dwicara/app/src/main/res/drawable/ic_uk.xml" value="0.1" />
         <entry key="..\:/practice/kotlin/dwicara/app/src/main/res/drawable/ic_unknown_flag.xml" value="0.1" />
         <entry key="..\:/practice/kotlin/dwicara/app/src/main/res/drawable/spinner_background.xml" value="0.1775" />
         <entry key="..\:/practice/kotlin/dwicara/app/src/main/res/layout/activity_auth.xml" value="0.25" />
+        <entry key="..\:/practice/kotlin/dwicara/app/src/main/res/layout/activity_chat.xml" value="0.264" />
         <entry key="..\:/practice/kotlin/dwicara/app/src/main/res/layout/activity_form.xml" value="0.1" />
         <entry key="..\:/practice/kotlin/dwicara/app/src/main/res/layout/activity_friends_profile.xml" value="0.2" />
         <entry key="..\:/practice/kotlin/dwicara/app/src/main/res/layout/activity_main.xml" value="0.25" />
