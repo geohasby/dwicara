@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import com.bangkit.dwicara.R
 import com.bangkit.dwicara.databinding.FragmentLoginBinding
 import com.bangkit.dwicara.databinding.FragmentMyProfileBinding
+import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -33,10 +34,25 @@ class MyProfileFragment : Fragment() {
 
         auth = Firebase.auth
 
+        binding.btnBack.setOnClickListener {
+            activity?.finish()
+        }
+
+
         binding.btnLogout.setOnClickListener {
             auth.signOut()
             activity?.finish()
         }
+
+        Glide.with(this)
+            .load("https://cdn.pixabay.com/photo/2012/04/10/23/01/indonesia-26817__480.png")
+            .centerCrop()
+            .into(binding.ivNative)
+
+        Glide.with(this)
+            .load("https://cdn.pixabay.com/photo/2012/04/10/16/14/union-jack-26119__480.png")
+            .centerCrop()
+            .into(binding.ivLearn)
     }
 
     override fun onDestroyView() {
