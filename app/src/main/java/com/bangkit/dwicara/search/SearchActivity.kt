@@ -1,9 +1,12 @@
 package com.bangkit.dwicara.search
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.bangkit.dwicara.databinding.ActivitySearchBinding
+import com.bangkit.dwicara.friendsprofile.FriendsProfileActivity
+import com.bangkit.dwicara.recommendations.RecommendationsActivity
 import com.bumptech.glide.Glide
 
 class SearchActivity : AppCompatActivity() {
@@ -15,6 +18,10 @@ class SearchActivity : AppCompatActivity() {
 
         binding.btnBack.setOnClickListener {
             finish()
+        }
+
+        binding.btnViewProfile.setOnClickListener{
+            startActivity(Intent(this, FriendsProfileActivity::class.java))
         }
 
         binding.apply {

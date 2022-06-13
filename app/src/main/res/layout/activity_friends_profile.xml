@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".myprofile.MyProfileFragment">
+    tools:context=".friendsprofile.FriendsProfileActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -22,15 +22,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageButton
-            android:id="@+id/btn_edit"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/ic_baseline_edit_24"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
             android:id="@+id/avatar"
@@ -45,7 +36,7 @@
         <TextView
             android:id="@+id/tv_username"
             style="@style/TextContent"
-            android:text="@cey"
+            android:text="@geohasby"
             android:gravity="center"
             android:layout_marginTop="@dimen/space_normal"
             android:textSize="12sp"
@@ -58,7 +49,7 @@
         <TextView
             android:id="@+id/tv_fullname"
             style="@style/TextContent.Highlight"
-            android:text="Gilang Catur Yudishtira"
+            android:text="Geohasby Ammar Kautsar"
             android:gravity="center"
             app:fontFamily="@font/poppins_bold"
             app:layout_constraintTop_toBottomOf="@id/tv_username"
@@ -98,7 +89,7 @@
             app:layout_constraintTop_toBottomOf="@id/tv_languages"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
-        
+
         <TextView
             android:id="@+id/tv_native"
             style="@style/TextContent.Highlight"
@@ -225,19 +216,6 @@
             app:layout_constraintTop_toBottomOf="@id/tv_topic"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
-
-        <Button
-            android:id="@+id/btn_logout"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_topic"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginTop="@dimen/space_normal"
-            android:layout_marginHorizontal="@dimen/space_normal"
-            android:text="@string/logout"
-            android:backgroundTint="@color/red_500"
-            android:layout_marginBottom="@dimen/space_large"
-            style="@style/Button"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
