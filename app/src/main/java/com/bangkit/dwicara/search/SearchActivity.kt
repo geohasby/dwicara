@@ -3,6 +3,7 @@ package com.bangkit.dwicara.search
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.bangkit.dwicara.core.domain.User
 import com.bangkit.dwicara.databinding.ActivitySearchBinding
 import com.bumptech.glide.Glide
 
@@ -13,6 +14,10 @@ class SearchActivity : AppCompatActivity() {
         binding = ActivitySearchBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setUpView()
+    }
+
+    private fun setUpView() {
         binding.btnBack.setOnClickListener {
             finish()
         }
@@ -30,8 +35,18 @@ class SearchActivity : AppCompatActivity() {
         }
 
         Glide.with(this)
-            .load("https://cdn.pixabay.com/photo/2017/04/01/21/06/portrait-2194457__340.jpg")
+            .load(user.photo_url)
             .circleCrop()
             .into(binding.ivAvatar)
+
+        binding.apply {
+            tvName.text = user.name
+            tvStatus.text = user.status?:"-"
+            tvUsername.text = "@geohasby"
+        }
+    }
+
+    companion object {
+        private val user = User(null, "Geohasby Ammar K", "https://cdn.pixabay.com/photo/2016/11/21/14/53/man-1845814__340.jpg",null,null,null)
     }
 }

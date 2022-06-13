@@ -1,5 +1,9 @@
 package com.bangkit.dwicara.core.domain
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class User(
     val id: String?,
     val name: String?,
@@ -7,4 +11,4 @@ data class User(
     val status: String?,
     val native: String?,
     val learn: String?
-)
+): Parcelable
