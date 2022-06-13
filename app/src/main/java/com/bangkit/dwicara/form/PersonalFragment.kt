@@ -1,9 +1,7 @@
 package com.bangkit.dwicara.form
 
 import android.app.DatePickerDialog
-import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,6 +12,7 @@ import androidx.core.content.ContextCompat.getColor
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.bangkit.dwicara.R
+import com.bangkit.dwicara.core.domain.User
 import com.bangkit.dwicara.databinding.FragmentPersonalBinding
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -43,8 +42,12 @@ class PersonalFragment : Fragment(), View.OnClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setUpView()
+    }
 
+    private fun setUpView() {
         binding.btnLogout.setOnClickListener(this)
+
         binding.btnNext.setOnClickListener(this)
 
         val date = DatePickerDialog.OnDateSetListener{ _, year, monthOfYear, dayOfMonth ->
@@ -89,7 +92,7 @@ class PersonalFragment : Fragment(), View.OnClickListener {
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {}
-            }
+        }
     }
 
     private fun updateLabel() {
@@ -145,9 +148,22 @@ class PersonalFragment : Fragment(), View.OnClickListener {
             }
             R.id.btn_next -> {
                 if(validate()){
-                    findNavController().navigate(R.id.action_personalFragment_to_languageFragment)
+                    val newUser = User(Firebase.auth.uid, fullname, null, null, null, null)
+                    addUserToDb(newUser)
                 }
             }
+        }
+    }
+
+    private fun addUserToDb(newUser: User) {
+        // check username availability & call
+        // validate username -> registerUserToDatabase
+        updateUI(newUser)
+    }
+
+    private fun updateUI(newUser: User?) {
+        if(newUser != null) {
+            findNavController().navigate(R.id.action_personalFragment_to_languageFragment)
         }
     }
 }

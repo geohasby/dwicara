@@ -10,10 +10,5 @@ class FormActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         viewBinding = ActivityFormBinding.inflate(layoutInflater)
         setContentView(viewBinding.root)
-
-//        viewBinding.btnLogout.setOnClickListener {
-//            Firebase.auth.signOut()
-//            finish()
-//        }
     }
 }

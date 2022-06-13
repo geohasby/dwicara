@@ -36,7 +36,7 @@
             style="@style/TextContent.Header"
             android:layout_marginHorizontal="@dimen/space_normal"
             android:layout_marginTop="@dimen/space_normal"
-            android:text="Grammar for Baby"
+            tools:text="Grammar for Baby"
             android:textColor="@color/blue_500"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -47,7 +47,7 @@
             style="@style/TextContent"
             android:layout_marginHorizontal="@dimen/space_normal"
             android:layout_marginTop="@dimen/space_extra_small"
-            android:text="14 July 2022"
+            tools:text="14 July 2022"
             android:textColor="@color/grey_500"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -58,17 +58,18 @@
             style="@style/TextContent"
             android:layout_marginHorizontal="@dimen/space_normal"
             android:layout_marginTop="@dimen/space_extra_small"
-            android:text="englishwithbangkit.com"
+            tools:text="englishwithbangkit.com"
             android:textColor="@color/orange_500"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_date" />
 
         <TextView
+            android:id="@+id/tv_content"
             style="@style/TextContent"
             android:layout_marginHorizontal="@dimen/space_normal"
             android:layout_marginTop="@dimen/space_small"
-            android:text="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).\n
+            tools:text="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).\n
 It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).\n
 It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."
             app:layout_constraintEnd_toEndOf="parent"

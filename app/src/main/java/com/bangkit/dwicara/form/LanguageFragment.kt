@@ -1,5 +1,6 @@
 package com.bangkit.dwicara.form
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,9 +12,13 @@ import android.widget.ArrayAdapter
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bangkit.dwicara.MainActivity
 import com.bangkit.dwicara.R
+import com.bangkit.dwicara.core.domain.Interest
 import com.bangkit.dwicara.databinding.FragmentLanguageBinding
+import com.bangkit.dwicara.recommendations.ChipsAdapter
+import com.bangkit.dwicara.recommendations.RecommendationsActivity.Companion.interests
 
 class LanguageFragment : Fragment(), View.OnClickListener {
 
@@ -22,6 +27,10 @@ class LanguageFragment : Fragment(), View.OnClickListener {
 
     private lateinit var native: String
     private lateinit var learn: String
+
+    private val selectedInterest = ArrayList<Interest>()
+
+    private lateinit var interestRemovableChipsAdapter: ChipsAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,8 +42,15 @@ class LanguageFragment : Fragment(), View.OnClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        interestRemovableChipsAdapter = ChipsAdapter(selectedInterest, true) {
+            removeSelectedInterest(it)
+        }
+        setUpView()
+    }
 
+    private fun setUpView() {
         binding.btnBack.setOnClickListener(this)
+
         binding.btnSave.setOnClickListener(this)
 
         val nativeLanguageList = resources.getStringArray(R.array.native_language_list)
@@ -90,6 +106,39 @@ class LanguageFragment : Fragment(), View.OnClickListener {
 
             override fun onNothingSelected(parent: AdapterView<*>?) {}
         }
+
+        val autoTextViewAdapter = ArrayAdapter(
+            context as Context,
+            android.R.layout.simple_dropdown_item_1line,
+            interests.map { it.name })
+        binding.atvInterests.setAdapter(autoTextViewAdapter)
+
+        binding.atvInterests.setOnClickListener {
+            binding.atvInterests.showDropDown()
+        }
+
+        binding.atvInterests.onItemClickListener =
+            AdapterView.OnItemClickListener { _, _, pos, _ ->
+                addSelectedInterest(Interest(autoTextViewAdapter.getItem(pos) as String))
+                binding.atvInterests.text.clear()
+            }
+
+        binding.rvInterest.layoutManager =
+            LinearLayoutManager(context , LinearLayoutManager.HORIZONTAL, false)
+        binding.rvInterest.adapter = interestRemovableChipsAdapter
+    }
+
+    private fun removeSelectedInterest(interest: Interest) {
+        val pos = selectedInterest.indexOf(interest)
+        selectedInterest.remove(interest)
+        interestRemovableChipsAdapter.notifyItemRemoved(pos)
+    }
+
+    private fun addSelectedInterest(interest: Interest) {
+        if (selectedInterest.none { it.name == interest.name }) {
+            selectedInterest.add(interest)
+        }
+        interestRemovableChipsAdapter.notifyItemInserted(interestRemovableChipsAdapter.itemCount)
     }
 
     private fun validate(): Boolean {
@@ -123,9 +172,13 @@ class LanguageFragment : Fragment(), View.OnClickListener {
             }
             R.id.btn_save -> {
                 if(validate()){
-                    startActivity(Intent(activity, MainActivity::class.java))
+                    updateUserData()
                 }
             }
         }
+    }
+
+    private fun updateUserData() {
+        startActivity(Intent(activity, MainActivity::class.java))
     }
 }

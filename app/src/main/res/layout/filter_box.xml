@@ -43,11 +43,11 @@
         android:layout_height="0dp"
         android:layout_marginHorizontal="@dimen/space_normal"
         android:background="@drawable/edit_text_background"
-        app:layout_constraintBottom_toBottomOf="@id/mtv_interests"
-        app:layout_constraintTop_toTopOf="@id/mtv_interests" />
+        app:layout_constraintBottom_toBottomOf="@id/atv_interests"
+        app:layout_constraintTop_toTopOf="@id/atv_interests" />
 
     <AutoCompleteTextView
-        android:id="@+id/mtv_interests"
+        android:id="@+id/atv_interests"
         app:layout_constraintTop_toBottomOf="@id/et_learn"
         android:layout_width="match_parent"
         android:layout_marginHorizontal="@dimen/space_normal"
@@ -66,7 +66,7 @@
         tools:listitem="@layout/chips_item"
         android:layout_marginStart="@dimen/space_normal"
         tools:itemCount="1"
-        app:layout_constraintTop_toBottomOf="@id/mtv_interests"/>
+        app:layout_constraintTop_toBottomOf="@id/atv_interests"/>
 
     <Button
         android:id="@+id/btn_apply"
