@@ -167,7 +167,7 @@
                     android:layout_width="match_parent"
                     android:layout_marginHorizontal="@dimen/space_normal"
                     android:layout_marginTop="@dimen/space_small"
-                    android:text="Grammar for Baby"
+                    tools:text="Grammar for Baby"
                     android:textAlignment="textStart"
                     android:textColor="@color/blue_500"
                     android:textSize="18sp" />
@@ -180,7 +180,7 @@
                     android:layout_marginTop="@dimen/space_extra_small"
                     android:ellipsize="end"
                     android:maxLines="3"
-                    android:text="Grammar for baby is a lorem ipsum dolor sit amet adipisicid keyboard smash is amdaflijadla kfsdaf is a fishing rod with a sailor in the night sadf safsdf"
+                    tools:text="Grammar for baby is a lorem ipsum dolor sit amet adipisicid keyboard smash is amdaflijadla kfsdaf is a fishing rod with a sailor in the night sadf safsdf"
                     android:textColor="@color/grey_500" />
 
                 <Button

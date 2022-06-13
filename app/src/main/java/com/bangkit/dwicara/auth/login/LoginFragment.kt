@@ -144,7 +144,7 @@ class LoginFragment : Fragment() {
     private fun checkUserInDatabase(user: FirebaseUser?) {
         // call api to check user availability
         if(user != null) {
-            val isRegistered = true
+            val isRegistered = false
             if(isRegistered) {
                 updateUI(user)
             } else {
