@@ -106,9 +106,10 @@
                 <TextView
                     style="@style/TextContent.Highlight"
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/space_normal"
                     android:layout_marginTop="@dimen/space_small"
-                    android:text="@string/app_name"
+                    android:text="language"
                     android:textAlignment="center"
                     android:textColor="@color/blue_500"
                     android:textSize="18sp" />
@@ -119,7 +120,7 @@
                     android:layout_marginHorizontal="@dimen/space_normal"
                     android:layout_marginTop="@dimen/space_small"
                     android:layout_marginBottom="@dimen/space_normal"
-                    android:text="It's a mobile based app for learning foreign language by practicing chat with others."
+                    android:text="a system of communication used by a particular country or community. the book was translated into 25 languages"
                     android:textColor="@color/grey_500" />
 
             </LinearLayout>
