@@ -19,6 +19,7 @@ import com.bangkit.dwicara.core.domain.Interest
 import com.bangkit.dwicara.databinding.FragmentLanguageBinding
 import com.bangkit.dwicara.recommendations.ChipsAdapter
 import com.bangkit.dwicara.recommendations.RecommendationsActivity.Companion.interests
+import com.bumptech.glide.Glide
 
 class LanguageFragment : Fragment(), View.OnClickListener {
 
@@ -73,8 +74,17 @@ class LanguageFragment : Fragment(), View.OnClickListener {
             AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 native = parent!!.getItemAtPosition(position).toString()
-                if(native == nativeLanguageList[0])
-                    (view as TextView).setTextColor(ContextCompat.getColor(requireContext(), R.color.grey_500))
+                when (native) {
+                    nativeLanguageList[0] -> (view as TextView).setTextColor(ContextCompat.getColor(requireContext(), R.color.grey_500))
+                    nativeLanguageList[1] -> Glide.with(requireContext())
+                        .load("https://cdn.pixabay.com/photo/2012/04/10/23/01/indonesia-26817__480.png")
+                        .centerCrop()
+                        .into(binding.ivNative)
+                    else -> Glide.with(requireContext())
+                        .load("https://cdn.pixabay.com/photo/2012/04/10/16/14/union-jack-26119__480.png")
+                        .centerCrop()
+                        .into(binding.ivNative)
+                }
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {}
@@ -100,8 +110,17 @@ class LanguageFragment : Fragment(), View.OnClickListener {
             AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 learn = parent!!.getItemAtPosition(position).toString()
-                if(learn == learnLanguageList[0])
-                    (view as TextView).setTextColor(ContextCompat.getColor(requireContext(), R.color.grey_500))
+                when (learn) {
+                    learnLanguageList[0] -> (view as TextView).setTextColor(ContextCompat.getColor(requireContext(), R.color.grey_500))
+                    learnLanguageList[1] -> Glide.with(requireContext())
+                        .load("https://cdn.pixabay.com/photo/2012/04/10/23/01/indonesia-26817__480.png")
+                        .centerCrop()
+                        .into(binding.ivLearn)
+                    else -> Glide.with(requireContext())
+                        .load("https://cdn.pixabay.com/photo/2012/04/10/16/14/union-jack-26119__480.png")
+                        .centerCrop()
+                        .into(binding.ivLearn)
+                }
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {}
